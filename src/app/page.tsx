@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* Logo */}
       <div className="absolute top-6 left-[10px] md:left-[20px] md:text-[30px] z-20">
-        <h1 className="text-[20px] font-bold text-white tracking-tight">
+        <h1 className="text-[20px] bg-red-500 font-bold text-white tracking-tight">
           OnChainSuite
         </h1>
       </div>
@@ -63,22 +63,22 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative h-full flex items-center justify-center">
         <div className="text-center px-4 sm:px-6 lg:px-8 w-full max-w-4xl mx-auto">
-          <h2 className="text-[26px] md:text-[35px] md:text-6xl font-bold text-black mb-6">
-            Join the Future of <br /> On-Chain
+          <h2 className="text-[26px] md:text-[35px] md:text-6xl font-bold text-black hero-copy">
+            Join the Future of <br /> OnChain.
           </h2>
-          <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Be among the first to experience the next generation of blockchain technology.
+          <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto hero-subcopy">
+            Be the first to experience the future.
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="form">
               <div className="flex-1">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className=" px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className=" px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 email"
                   required   
                 />
               </div>
@@ -86,7 +86,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className=" sm:w-auto cursor-pointer px-[50px] py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                  className=" sm:w-auto cursor-pointer px-[20px] py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap button"
                 >
                   {isLoading ? 'Joining...' : 'Join Waitlist'}
                 </button>
