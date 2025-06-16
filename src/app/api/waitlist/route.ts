@@ -1,6 +1,9 @@
+import admin from '@/lib/firebase-admin';
 import { NextResponse } from 'next/server';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+
+export async function GET() {
+  return NextResponse.json({ message: 'GET works!' });
+}
 
 export async function POST(request: Request) {
   try {
@@ -9,16 +12,12 @@ export async function POST(request: Request) {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
-    // Add to Firestore
-    const docRef = await addDoc(collection(db, 'waitlist'), {
+    const docRef = await admin.firestore().collection('waitlist').add({
       email,
-      timestamp: serverTimestamp(),
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
     });
 
     return NextResponse.json(
@@ -27,9 +26,6 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     console.error('Error adding to waitlist:', error);
-    return NextResponse.json(
-      { error: 'Failed to join waitlist' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to join waitlist' }, { status: 500 });
   }
-} 
+}

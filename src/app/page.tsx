@@ -8,6 +8,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    
     e.preventDefault();
     setIsLoading(true);
 
@@ -64,10 +65,12 @@ export default function Home() {
       <main className="relative h-full flex items-center justify-center">
         <div className="text-center px-4 sm:px-6 lg:px-8 w-full max-w-4xl mx-auto">
           <h2 className="text-[26px] md:text-[35px] md:text-6xl font-bold text-black hero-copy">
-            Join the Future of <br /> OnChain.
+            Connect On-Chain Activities <br /> to Email Campaigns
           </h2>
           <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto hero-subcopy">
-            Be the first to experience the future.
+            Retain Web3 users by linking blockchain <br />
+            interactions with targeted email marketing. Built <br />
+            for Web3 businesses, by Web3 enthusiasts.
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto">

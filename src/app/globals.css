@@ -42,7 +42,7 @@ body {
 
 @media (min-width: 1024px) {
   .hero-copy {
-    font-size: 70px; /* Large screen: Desktops */
+    font-size: 60px; /* Large screen: Desktops */
   }
 }
 
@@ -62,9 +62,10 @@ body {
 }
 
 .email{
-  padding-top: 8px;
-  padding-bottom: 8px;
-  width: 130px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-size: 16px;
+  width: 200px;
   border: none;
   padding-left: 5px;
   outline: none;
@@ -74,11 +75,12 @@ body {
 .button{
   border-radius: 3px;
   background-color: black;
+  font-size: 16px;
   font-weight: 400;
   color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 137px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 206px;
   border: none;
   transition: all 0.5s ease;
 }
